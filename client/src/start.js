@@ -1,7 +1,11 @@
 import ReactDOM from "react-dom";
+// import React from "react";
+import App from "./app";
+import CryptoContext from "./CryptoContext";
 
-ReactDOM.render(<HelloWorld />, document.querySelector("main"));
-
-function HelloWorld() {
-    return <div>Hello, World!</div>;
-}
+ReactDOM.render(
+    <CryptoContext>
+        <App />
+    </CryptoContext>,
+    document.querySelector("main")
+);
