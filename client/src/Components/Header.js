@@ -11,6 +11,7 @@ import {
 } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
 import { CryptoState } from "../CryptoContext";
+import AuthModal from "./Authentication/AuthModal";
 
 const useStyles = makeStyles(() => ({
     title: {
@@ -26,7 +27,7 @@ function Header() {
     const classes = useStyles();
     const history = useHistory();
     const { currency, setCurrency } = CryptoState();
-    console.log("Header Currency", currency);
+    // console.log("Header Currency", currency);
     const darkTheme = createTheme({
         palette: {
             primary: {
@@ -60,6 +61,7 @@ function Header() {
                             <MenuItem value={"EUR"}>EUR</MenuItem>
                             <MenuItem value={"USD"}>USD</MenuItem>
                         </Select>
+                        <AuthModal />
                     </Toolbar>
                 </Container>
             </AppBar>
