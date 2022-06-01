@@ -4,6 +4,9 @@ import Homepage from "./Pages/Homepage";
 import CryptoPage from "./Pages/CryptoPage";
 import { makeStyles } from "@material-ui/core/styles";
 import Alert from "./Components/Alert";
+// import Auth from "./Components/Authentication/auth";
+// import supabase from "./Components/Authentication/supabase";
+// import { useState, useEffect } from "react";
 
 function App() {
     const useStyles = makeStyles(() => ({
@@ -13,7 +16,15 @@ function App() {
             minHeight: "100vh",
         },
     }));
+    // const [session, setSession] = useState(null);
 
+    // useEffect(() => {
+    //     setSession(supabase.auth.session());
+
+    //     supabase.auth.onAuthStateChange((_event, session) => {
+    //         setSession(session);
+    //     });
+    // }, []);
     const classes = useStyles();
     return (
         <BrowserRouter>
@@ -33,3 +44,25 @@ function App() {
 }
 
 export default App;
+
+{
+    /* <BrowserRouter>
+    <div className={classes.App}>
+        {!session ? (
+            <Auth />
+        ) : (
+            <Homepage key={session.user.id} session={session} />
+        )}
+        <Header />
+        <Route exact path="/">
+            <Homepage />
+        </Route>
+
+        <Route path="/crypto/:id">
+            <CryptoPage />
+        </Route>
+    </div>
+    <Alert />
+    <footer>&copy; 2022 St4b3r</footer>
+</BrowserRouter>; */
+}

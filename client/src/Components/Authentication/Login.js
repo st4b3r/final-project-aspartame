@@ -19,13 +19,16 @@ const Login = ({ handleClose }) => {
             return;
         }
         try {
-            const result = await supabase.auth.signIn(email, password);
+            const { user, session, error } = await supabase.auth.signIn(
+                email,
+                password
+            );
             setAlert({
                 open: true,
-                message: "Login successful. Welcom ${result.user.email}",
+                message: "Login successful. Welcome ${user.email}",
                 type: "error",
             });
-            console.log(result);
+            console.log(user, session, error);
         } catch (error) {
             setAlert({
                 open: true,

@@ -12,6 +12,7 @@ import {
 import { useHistory } from "react-router-dom";
 import { CryptoState } from "../CryptoContext";
 import AuthModal from "./Authentication/AuthModal";
+// import UserSidebar from "./Authentication/UserSidebar";
 
 const useStyles = makeStyles(() => ({
     title: {
@@ -61,6 +62,7 @@ function Header() {
                             <MenuItem value={"EUR"}>EUR</MenuItem>
                             <MenuItem value={"USD"}>USD</MenuItem>
                         </Select>
+                        {/* insert modal {user ? <UserSidebar /> : } */}
                         <AuthModal />
                     </Toolbar>
                 </Container>

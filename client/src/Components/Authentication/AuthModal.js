@@ -7,7 +7,7 @@ import { Button } from "@material-ui/core";
 import AppBar from "@material-ui/core/AppBar";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
-import Login from "./Login";
+import Auth from "./auth";
 import SignUp from "./SignUp";
 
 const useStyles = makeStyles((theme) => ({
@@ -55,7 +55,7 @@ export default function AuthModal() {
                 }}
                 onClick={handleOpen}
             >
-                Login
+                Join
             </Button>
             <Modal
                 aria-labelledby="transition-modal-title"
@@ -88,7 +88,7 @@ export default function AuthModal() {
                                 <Tab label="Sign Up" />
                             </Tabs>
                         </AppBar>
-                        {value === 0 && <Login handleClose={handleClose} />}
+                        {value === 0 && <Auth handleClose={handleClose} />}
                         {value === 1 && <SignUp handleClose={handleClose} />}
                     </div>
                 </Fade>
