@@ -19,14 +19,15 @@ const SignUp = ({ handleClose }) => {
             return;
         }
         try {
-            const result = await supabase.auth.signIn(email, password);
+            const result = await supabase.auth.signUp(email, password);
             setAlert({
                 open: true,
-                message: "Login successful. Welcom ${result.user.email}",
+                message: "Signup successful. Welcome ${result.user.email}",
                 type: "error",
             });
             console.log(result);
         } catch (error) {
+            console.log(error);
             setAlert({
                 open: true,
                 message: "Email or Password incorrect",

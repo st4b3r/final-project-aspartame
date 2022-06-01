@@ -13,6 +13,7 @@ import { useHistory } from "react-router-dom";
 import { CryptoState } from "../CryptoContext";
 import AuthModal from "./Authentication/AuthModal";
 // import UserSidebar from "./Authentication/UserSidebar";
+// import supabase from "./Authentication/supabase";
 
 const useStyles = makeStyles(() => ({
     title: {
@@ -23,6 +24,7 @@ const useStyles = makeStyles(() => ({
         cursor: "pointer",
     },
 }));
+// const user = supabase.auth.user();
 
 function Header() {
     const classes = useStyles();
@@ -62,7 +64,7 @@ function Header() {
                             <MenuItem value={"EUR"}>EUR</MenuItem>
                             <MenuItem value={"USD"}>USD</MenuItem>
                         </Select>
-                        {/* insert modal {user ? <UserSidebar /> : } */}
+                        {/* {user ? <UserSidebar /> : <AuthModal />} */}
                         <AuthModal />
                     </Toolbar>
                 </Container>

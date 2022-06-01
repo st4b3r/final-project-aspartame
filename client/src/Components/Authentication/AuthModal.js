@@ -41,7 +41,7 @@ export default function AuthModal() {
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
-    console.log(value);
+    // console.log(value);
     return (
         <div>
             <Button
